@@ -11,17 +11,17 @@ export class MiniMapComponent {
   @Input() lngLat?: [number, number];
   @ViewChild('map') divMap?: ElementRef;
 
-
+  
   ngAfterViewInit() {
     if( !this.divMap?.nativeElement ) throw "Map Div not found";
     if( !this.lngLat ) throw "LngLat can't be null";
 
     const map = new Map({
       container: this.divMap.nativeElement, // container ID
-      style: 'mapbox://styles/mapbox/streets-v12', // style URL
       center: this.lngLat,
       zoom: 15,
-      interactive: false
+      interactive: false,
+      accessToken: 'pk.eyJ1Ijoia2xlcml0aCIsImEiOiJja3hramV2OWIwbjEwMzFwYzJlZWl6N2g5In0.iKXPpYvo7UPRiiZ-x_lCrw'
     });
 
     new Marker()
