@@ -45,7 +45,6 @@ export class ZoomRangePageComponent implements AfterViewInit, OnDestroy {
   
     this.mapa = new mapboxgl.Map({
       container: this.divMapa.nativeElement,
-      style: 'mapbox://styles/mapbox/streets-v11', // style URL
       center: this.center,
       zoom: this.zoomLevel
     });
