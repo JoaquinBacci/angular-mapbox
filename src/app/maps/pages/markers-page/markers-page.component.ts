@@ -26,6 +26,8 @@ export class MarkersPageComponent {
   public map?: Map;
   public currentLngLat: LngLat = new LngLat(-74.10380784179445, 4.651165392795477);
 
+  
+
 
   ngAfterViewInit(): void {
 
@@ -33,6 +35,7 @@ export class MarkersPageComponent {
 
     this.map = new Map({
       container: this.divMap.nativeElement, // container ID
+      style: 'mapbox://styles/mapbox/streets-v12', // style URL
       center: this.currentLngLat,
       zoom: 13
     });

@@ -31,6 +31,7 @@ export class FullScreenPageComponent {
 
     this.mapDestino = new Map({
       container: this.divMapDestino.nativeElement, // container ID
+      style: 'mapbox://styles/mapbox/streets-v12', // style URL
       center: [-74.5, 40], // starting position [lng, lat]
       zoom: 9, // starting zoom
     });
@@ -41,6 +42,7 @@ export class FullScreenPageComponent {
   readFromLocalStorage() {
     const plainMarkersString = localStorage.getItem('plainMarkers') ?? '[]';
     const plainMarkers: PlainMarker[] = JSON.parse( plainMarkersString ); //! OJO!
+    console.log("plainMarkers",plainMarkers);
     
     plainMarkers.forEach( ({ color, lngLat }) => {
       const [ lng, lat ] = lngLat;
